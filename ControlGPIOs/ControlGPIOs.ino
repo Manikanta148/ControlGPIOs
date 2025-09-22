@@ -7,15 +7,15 @@
 // Provide the RTDB payload printing info and other helper functions.
 #include <addons/RTDBHelper.h>
 
-#define WIFI_SSID "moto g35 5G_8995"
-#define WIFI_PASSWORD "moto12345"
+#define WIFI_SSID "your_SSID"
+#define WIFI_PASSWORD "your_PASSWORD"
 
-#define API_KEY "AIzaSyAsbeuPd7mNrALj8yu9tx85eSAjyq58Roo"
+#define API_KEY "your_API_KEY"
 
-#define DATABASE_URL "https://controlgpios-default-rtdb.firebaseio.com/"
+#define DATABASE_URL "your_DATABASE_URL"
 
-#define USER_EMAIL "beginnercoder2004@gmail.com"
-#define USER_PASSWORD "coder@2004"
+#define USER_EMAIL "AUTHENTICATION_EMAIL"
+#define USER_PASSWORD "AUTHENTICATION_PASSWORD"
 
 #define LED_PIN 18
 
