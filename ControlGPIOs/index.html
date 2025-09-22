@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ESP32 LED Control</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    button { padding: 15px 30px; font-size: 18px; margin: 10px;border: none;border-radius: 20px;cursor: pointer;}
+    #on{
+      background-color: red;
+    }
+    #off{
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>ESP32 LED Control</h1>
+  <button onclick="setLED(true)" id="on">Turn ON</button>
+  <button onclick="setLED(false)" id="off">Turn OFF</button>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAsbeuPd7mNrALj8yu9tx85eSAjyq58Roo",
+      authDomain: "controlgpios.firebaseapp.com",
+      databaseURL: "https://controlgpios-default-rtdb.firebaseio.com",
+      projectId: "controlgpios",
+      storageBucket: "controlgpios.firebasestorage.app",
+      messagingSenderId: "957784971997",
+      appId: "1:957784971997:web:c031792875c7d040869934"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+
+    function setLED(state) {
+      database.ref("/led/state").set(state)
+        .then(() => console.log("LED state set to", state))
+        .catch((error) => console.error("Error updating LED:", error));
+    }
+  </script>
+</body>
+</html>
